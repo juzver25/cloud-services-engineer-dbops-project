@@ -17,7 +17,7 @@ jobs:
         tar -xzf flyway-commandline.tar.gz
         sudo ln -s `pwd`/flyway-11.1.0/flyway /usr/local/bin/flyway
 
-    # Выполняем миграции с помощью Flyway
+    # Выполняем миграции с помощью Flyway v2
     - name: Run Flyway migrations
       env:
         FLYWAY_URL: "jdbc:postgresql://${{ secrets.DB_HOST }}:${{ secrets.DB_PORT }}/${{ secrets.DB_NAME }}"
