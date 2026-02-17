@@ -23,7 +23,7 @@ jobs:
         FLYWAY_URL: "jdbc:postgresql://${{ secrets.DB_HOST }}:${{ secrets.DB_PORT }}/${{ secrets.DB_NAME }}"
         FLYWAY_USER: "${{ secrets.DB_USER }}"
         FLYWAY_PASSWORD: "${{ secrets.DB_PASSWORD }}"
-      run: flyway migrate -locations=filesystem:migrations
+      run: flyway migrate -locations=filesystem:migrations/V001_create_tables.sql
     ### Этот шаг оставьте без изменений
     - name: Download and setup autotests binaries
       run: |
